@@ -18,8 +18,7 @@ public interface IBlocRepository extends JpaRepository<Bloc, Long> {
 
     List<Bloc> findByFoyerUniversiteNomUniversiteLike(String nomUniversite);
     Bloc findByIdBloc(long id);
-    @Query("select b from Bloc b join fetch b.chambres c group by b")
-    Set<Bloc> listeChambreParBloc();
+
 
 
 

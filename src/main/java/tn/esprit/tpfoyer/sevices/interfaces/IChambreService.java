@@ -16,9 +16,6 @@ public interface IChambreService {
     List<Chambre>  getChambresParNomUniversite( String nomUniversite) ;
     public List<Chambre> getChambresParBlocEtTypeKeyword (long idBloc, TypeChambre typeC) ;
     public List<Chambre> getParBlocEtType (long idBloc, TypeChambre typeC) ;
-    void listeChambreParBloc();
-    void listeChambreParBlocFromBloc();
-    void pourcentageChambreParTypeChambre();
 
 
 

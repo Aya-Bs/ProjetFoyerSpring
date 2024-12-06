@@ -82,45 +82,10 @@ public class ChambreServiceImpl implements IChambreService {
         return chambreRepository.getParBlocEtType(idBloc,typeC);
     }
 
-    @Scheduled(fixedRate = 60000)
-    @Override
-    public void listeChambreParBloc() {
-        Set <Chambre> chambres = chambreRepository.listeChambreParBloc();
-
-        for (Chambre c : chambres){
-            System.out.println("Bloc "+c.getBloc() + "capacité :" + c.getBloc().getCapaciteBloc());
-            System.out.println("num chambre :" + c.getNumeroChambre());
-            System.out.println("type "+ c.getTypeC());
-        }
-
-    }
-    //@Scheduled(fixedRate = 60000)
-    @Override
-    public void listeChambreParBlocFromBloc() {
-        Set <Bloc> blocs = blocRepository.listeChambreParBloc();
-
-        for (Bloc b : blocs){
-            System.out.println();
-            System.out.println("Bloc "+b.getNomBloc() + "capacité :" + b.getNomBloc());
-            for(Chambre c : blocs.stream().iterator().next().getChambres()){
-                System.out.println("num chambre :" + c.getNumeroChambre());
-                System.out.println("type "+ c.getTypeC());
-            }
-
-        }
-
-    }
-
-    @Override
-    public void pourcentageChambreParTypeChambre() {
-        int nbr = chambreRepository.nbrChambres();
-        List <Chambre> chambres = this.readAll();
-        List<TypeChambre> types = Collections.singletonList(chambres.listIterator().next().getTypeC());
-            for (TypeChambre tc : types){
-                //float pourcentage = (tc * ) / nbr;
 
 
-            }
 
-    }
+
+
+
 }

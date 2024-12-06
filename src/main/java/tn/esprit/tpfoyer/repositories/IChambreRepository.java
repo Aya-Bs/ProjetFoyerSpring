@@ -29,11 +29,7 @@ public interface IChambreRepository extends JpaRepository<Chambre,Long> {
     @Query("select c from Chambre c join Reservation r on (r member of c.reservations) where r.idResevation = :idRes")
     Chambre findByIdReservation(String idRes);
 
-    @Query("select c from Chambre c group by c.bloc")
-    Set<Chambre> listeChambreParBloc();
 
-    @Query("select count(c) from Chambre c")
-    int nbrChambres();
 
 
 }
